@@ -36,7 +36,7 @@ def download_mt_genomes(species_names, email, output_dir, log_file, rettype):
                 fetch_handle.close()
                 # Get the ACCESSION number
                 accession_number = seq_record.split("ACCESSION")[1].split()[0]
-                filename = os.path.join(output_dir, f"{species.replace(' ', '_')}_{seq_id}.gb")
+                filename = os.path.join(output_dir, f"{species.replace(' ', '_')}_{accession_number}.gb")
                 with open(filename, "w") as file:
                     file.write(seq_record)
                 downloaded += 1
